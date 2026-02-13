@@ -1,6 +1,6 @@
 #include "Myfloat.h"
 #include <stdio.h>
-
+//Shriyans Singh 114807762
 float construct_float_sf(char sign_bit, char exponent, unsigned int fraction) {
    unsigned int f = 0;
 
