@@ -12,6 +12,7 @@ Test(ToggleBit, examples) {
    cr_assert_eq(ToggleBit(9, 3), 1);
 }
 
+
 Test(GetMSB, examples) {
    cr_assert_eq(GetMSB(18), 4);
    cr_assert_eq(GetMSB(0), -1);
@@ -29,18 +30,6 @@ Test(RotateLeft, examples) {
 Test(SwapOddEvenBits, examples) {
    cr_assert_eq(SwapOddEvenBits(23), 43);
 }
-//above tests were given. I will write my own from here up till where it states "PART 2:..."
-
-
-
-
-
-
-
-
-
-
-
 
 /* =========================
 * PART 2: IEEE 754 Float
