@@ -1,7 +1,7 @@
 // HW3 Starter Code
 #include "MyBitManipulation.h"
 #include <stdio.h>
-
+//Shriyans Singh 114807762
 /*
 * Toggle the bit at position pos in num
 */
