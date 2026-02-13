@@ -7,6 +7,9 @@
 */
 int ToggleBit(int num, int pos) {
    /* TODO: implement */
+   //Flip = XOR. (using slide 3 of lecture 6 to figure out the math here.)
+   int bit_for_toggle= (1<<pos);
+   num= num^bit_for_toggle;
    return num;
 }
 
