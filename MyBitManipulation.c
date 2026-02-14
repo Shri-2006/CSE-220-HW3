@@ -41,6 +41,14 @@ int GetMSB(int num) {
 */
 int ClearBitRange(int num, int start, int end) {
    /* TODO: implement */
+   int zero =0;
+   if(start < 0 || end >31 || start>end){
+      return num;
+   }
+   for (start; start<=end; start++){
+      
+
+   }
    return num;
 }
 
