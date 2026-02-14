@@ -17,6 +17,20 @@ int ToggleBit(int num, int pos) {
    return num;
 }
 
+   //ToggleBit tests
+  /*
+   cr_assert_eq(ToggleBit(0,0),1);
+   cr_assert_eq(ToggleBit(1,0),0);
+   cr_assert_eq(ToggleBit(0,2),4);
+   cr_assert_eq(ToggleBit(-1,3),-9);
+   cr_assert_eq(ToggleBit(2147483647,31),-1);
+   cr_assert_eq(ToggleBit(20,3),28);
+   cr_assert_eq(ToggleBit(20,5),52)
+   */
+
+
+
+
 /*
 * Return the position of the most significant set bit
 * Return -1 if num == 0
