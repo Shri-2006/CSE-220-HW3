@@ -28,6 +28,8 @@ Test(GetMSB, examples) {
    //Tests by Shriyans Singh
    cr_assert_eq(GetMSB(2147483647),30);
    cr_assert_eq(GetMSB(-1),31);
+   
+    
 }
 
 Test(ClearBitRange, examples) {
