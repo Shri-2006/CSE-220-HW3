@@ -63,7 +63,7 @@ int ClearBitRange(int num, int start, int end) {
 */
 //based on piazza
 uint32_t RotateLeft(uint32_t num, int d) {
-   //if negative d, return num
+   //if negative d retutn num
    if (d<0){
       return num;
    }
@@ -72,10 +72,13 @@ uint32_t RotateLeft(uint32_t num, int d) {
       d=d-32;
    }
 
+
    //create shifted left by d position. 
    uint32_t num_left=num<<d;
+
    //Stored positions lost in num_right.
    uint32_t num_right=num>>(32-d);
+
    //combine left & right
    num = num_left|num_right;
 
