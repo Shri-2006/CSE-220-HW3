@@ -46,12 +46,12 @@ int ClearBitRange(int num, int start, int end) {
    }
 
    //while start<=end run clearer
-   for (start; start<=end; start++){
+   for (int i=start; i<=end; i++){
       //unsigned to prevent -0 error here
       unsigned int one=1;
-      //all bits but bit to be cleared =1
-      unsigned int bit_clearer=~(one<<start);
-     //clear bits
+      //all bits but bit to be cleared set to 1
+      unsigned int bit_clearer=~(one<<i);
+     //clear bits using & operator
       num=num&bit_clearer;
 
    }
@@ -62,7 +62,27 @@ int ClearBitRange(int num, int start, int end) {
 * Rotate num to the left by d bits
 */
 int RotateLeft(int num, int d) {
-   /* TODO: implement */
+   //Constraint to prevent overflow rotation
+   while(d>31){
+      d=d-32;
+   }
+
+   //create checker to see if most significant bit is 1
+   unsigned int bit_check=1;
+   bit_check=(bit_check<<31);
+
+
+   for(int i=d; i>0;i--){
+      int temp = 0;
+      if ((num&bit_check)!=0){
+         temp =1;
+      }
+      num=num<<1;
+      num=num+temp;
+
+   }
+
+
    return num;
 }
 
