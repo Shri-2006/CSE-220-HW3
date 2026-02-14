@@ -94,12 +94,15 @@ int SwapOddEvenBits(int num) {
    uint32_t temp= num;
 
    //edven bits swap
-   left_num=temp& 0xAAAAAAAA;
+   even_num=temp& 0xAAAAAAAA;
+   even_num=even_num<<1;
 
    //odd bit
-   right_num=temp &0x55555555;
+   odd_num=temp &0x55555555;
+   odd_num=odd_num>>1;
 
-   num=left_num|right_num;
+   //combine into num
+   num=even_num|odd_num;
 
    return num;
 }
