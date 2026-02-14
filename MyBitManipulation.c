@@ -51,6 +51,7 @@ int ClearBitRange(int num, int start, int end) {
       unsigned int one=1;
       //all bits but bit to be cleared set to 1
       unsigned int bit_clearer=~(one<<i);
+
      //clear bits using & operator
       num=num&bit_clearer;
 
@@ -89,6 +90,16 @@ uint32_t RotateLeft(uint32_t num, int d) {
 * Swap odd and even bits
 */
 int SwapOddEvenBits(int num) {
-   /* TODO: implement */
+   //Unsigned to allow for bit operations
+   uint32_t temp= num;
+
+   //edven bits swap
+   left_num=temp& 0xAAAAAAAA;
+
+   //odd bit
+   right_num=temp &0x55555555;
+
+   num=left_num|right_num;
+
    return num;
 }
