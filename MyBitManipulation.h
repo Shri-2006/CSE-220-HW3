@@ -1,3 +1,4 @@
+//#Shriyans Singh 114807762
 #ifndef MY_BIT_MANIPULATION_H
 #define MY_BIT_MANIPULATION_H
 

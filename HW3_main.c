@@ -1,3 +1,4 @@
+//#Shriyans Singh 114807762
 #include <stdio.h>
 #include "MyBitManipulation.h"
 #include "Myfloat.h"

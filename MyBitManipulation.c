@@ -1,12 +1,16 @@
 // HW3 Starter Code
 #include "MyBitManipulation.h"
 #include <stdio.h>
+#include <stdint.h>
 //Shriyans Singh 114807762
 /*
 * Toggle the bit at position pos in num
 */
 int ToggleBit(int num, int pos) {
-   /* TODO: implement */
+   //prevent improper pos
+   if (pos <0||pos>31){
+      return num;
+   }
    //Flip = XOR. (using slide 3 of lecture 6 to figure out the math here.)
    int bit_for_toggle= (1<<pos);
    num= num^bit_for_toggle;
@@ -18,7 +22,8 @@ int ToggleBit(int num, int pos) {
 * Return -1 if num == 0
 */
 int GetMSB(int num) {
-   /* TODO: implement */
+   //
+
    return -1;
 }
 

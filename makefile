@@ -1,3 +1,4 @@
+#Shriyans Singh 114807762
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c99 -g
 CRIT = -lcriterion

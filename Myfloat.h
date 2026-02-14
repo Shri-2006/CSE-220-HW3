@@ -1,3 +1,4 @@
+//#Shriyans Singh 114807762
 #ifndef MYFLOAT_H
 #define MYFLOAT_H
 
