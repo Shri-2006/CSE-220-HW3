@@ -17,7 +17,7 @@ int ToggleBit(int num, int pos) {
    return num;
 }
 
-   //ToggleBit tests
+   //ToggleBit tests by Shriyans Singh
   /*
    cr_assert_eq(ToggleBit(0,0),1);
    cr_assert_eq(ToggleBit(1,0),0);
@@ -49,6 +49,17 @@ int GetMSB(int num) {
    //if no 1, return -1
    return -1;
 }
+
+
+  //GetMSB Tests by Shriyans Singh
+   /*
+   cr_assert_eq(GetMSB(2147483647),30);
+   cr_assert_eq(GetMSB(-1),31);
+   cr_assert_eq(GetMSB(23),4);
+   cr_assert_eq(GetMSB(43),5);
+   cr_assert_eq(GetMSB(73),6);
+   */
+
 
 /*
 * Clear bits from start to end (inclusive)

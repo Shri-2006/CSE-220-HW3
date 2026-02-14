@@ -34,3 +34,11 @@ Togglebit test cases I wrote:
    cr_assert_eq(ToggleBit(20,3),28); - Flip third bit from 0 to 1, resulting in 20+8=28
    cr_assert_eq(ToggleBit(20,5),52) - Flip the 5th bit, adding 32 to 20 resulting in 52. 
 
+  //GetMSB Tests by Shriyans Singh
+   /*
+   cr_assert_eq(GetMSB(2147483647),30); - all bits except MSB bit is 1, so MSB bit with 1 is 30.
+   cr_assert_eq(GetMSB(-1),31);-Since negative, MSB bit (31) is 1
+   cr_assert_eq(GetMSB(23),4); - 23=00010111, MSB with 1 is 4
+   cr_assert_eq(GetMSB(43),5); - 43 = 00101011, MSB with 1 is 5
+   cr_assert_eq(GetMSB(73),6); - 73 = 01001001, MSB with 1 is 6
+   */

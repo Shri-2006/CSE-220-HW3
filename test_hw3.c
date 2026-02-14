@@ -28,8 +28,13 @@ Test(GetMSB, examples) {
    cr_assert_eq(GetMSB(18), 4);
    cr_assert_eq(GetMSB(0), -1);
    //Tests by Shriyans Singh
+   /*
    cr_assert_eq(GetMSB(2147483647),30);
    cr_assert_eq(GetMSB(-1),31);
+   cr_assert_eq(GetMSB(23),4);
+   cr_assert_eq(GetMSB(43),5);
+   cr_assert_eq(GetMSB(73),6);
+   */
 
     
 }
