@@ -41,6 +41,19 @@ Test(GetMSB, examples) {
 
 Test(ClearBitRange, examples) {
    cr_assert_eq(ClearBitRange(73, 1, 3), 65);
+
+   //Tests by Shriyans Singh
+   /*
+   cr_assert_eq(ClearBitRange(2,10,1),2); //checks start>end constraint
+   cr_assert_eq(ClearBitRange(2,-10,1),2); //checks -start constraint, return num
+   cr_assert_eq(ClearBitRange(2,10,41),2); //checks end>31 constraint, return num
+   cr_assert_eq(ClearBitRange(9,1,4),1); //clears all bit but first 
+   cr_assert_eq(ClearBitRange(63,1,5),1); //clears all bit but first
+   cr_assert_eq(ClearBitRange(100000,0,0),0); //checks if only one bit changes
+   cr_assert_eq(ClearBitRange(63,0,0),62);// checks if only one bit changes
+   cr_assert_eq(ClearBitRange(23,0,10),0); //checks if all bits cleared
+
+   */
 }
 
 Test(RotateLeft, examples) {

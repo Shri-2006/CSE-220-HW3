@@ -26,6 +26,8 @@ Q4. Constraint to prevent -d. Constraint to reduce d to under 32.
 Q5.used uint32_t because piazza mentioned for an earlier problem, and its quicker to type than unsigned int.                                                                                                                                                                                                                                              //OLD:Constraint to prevent -d. wasn't mentioned in assignment so I assume it doesn't exist, but I made it just in case. Constraint to prevent d from being greater than 31 (number could be put, but it would be less than 32). Created a checker to see if most significant bit is one. Did a unsigned int temp= num because of the -0 error thing.
 
 Togglebit test cases I wrote:
+   cr_assert_eq(ToggleBit(2,-1),2); - check negative constraint, return num
+   cr_assert_eq(ToggleBit(2,43),2); - check over 31 constraint, return num
    cr_assert_eq(ToggleBit(0,0),1); - Flip the first bit which is a 0, results in 1.
    cr_assert_eq(ToggleBit(1,0),0); -Flip the first bit which is a 1, results in 0.
    cr_assert_eq(ToggleBit(0,2),4);  - Flip the second bit which is 0, results in 100, which is a 4.
@@ -41,4 +43,18 @@ Togglebit test cases I wrote:
    cr_assert_eq(GetMSB(23),4); - 23=00010111, MSB with 1 is 4
    cr_assert_eq(GetMSB(43),5); - 43 = 00101011, MSB with 1 is 5
    cr_assert_eq(GetMSB(73),6); - 73 = 01001001, MSB with 1 is 6
+   */
+
+
+      //TClearBitRangeests by Shriyans Singh
+   /*
+   cr_assert_eq(ClearBitRange(2,10,1),2); //checks start>end constraint
+   cr_assert_eq(ClearBitRange(2,-10,1),2); //checks -start constraint, return num
+   cr_assert_eq(ClearBitRange(2,10,41),2); //checks end>31 constraint, return num
+   cr_assert_eq(ClearBitRange(9,1,4),1); //clears all bit but first 
+   cr_assert_eq(ClearBitRange(63,1,5),1); //clears all bit but first
+   cr_assert_eq(ClearBitRange(100000,0,0),0); //checks if only one bit changes
+   cr_assert_eq(ClearBitRange(63,0,0),62);// checks if only one bit changes
+   cr_assert_eq(ClearBitRange(23,0,10),0); //checks if all bits cleared
+
    */

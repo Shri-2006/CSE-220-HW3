@@ -19,6 +19,8 @@ int ToggleBit(int num, int pos) {
 
    //ToggleBit tests by Shriyans Singh
   /*
+   cr_assert_eq(ToggleBit(2,-1),2);
+   cr_assert_eq(ToggleBit(2,43),2);
    cr_assert_eq(ToggleBit(0,0),1);
    cr_assert_eq(ToggleBit(1,0),0);
    cr_assert_eq(ToggleBit(0,2),4);
@@ -83,6 +85,19 @@ int ClearBitRange(int num, int start, int end) {
    }
    return num;
 }
+
+   //ClearBitRange Tests by Shriyans Singh
+   /*
+   cr_assert_eq(ClearBitRange(2,10,1),2); //checks start>end constraint
+   cr_assert_eq(ClearBitRange(2,-10,1),2); //checks -start constraint, return num
+   cr_assert_eq(ClearBitRange(2,10,41),2); //checks end>31 constraint, return num
+   cr_assert_eq(ClearBitRange(9,1,4),1); //clears all bit but first 
+   cr_assert_eq(ClearBitRange(63,1,5),1); //clears all bit but first
+   cr_assert_eq(ClearBitRange(100000,0,0),0); //checks if only one bit changes
+   cr_assert_eq(ClearBitRange(63,0,0),62);// checks if only one bit changes
+   cr_assert_eq(ClearBitRange(23,0,10),0); //checks if all bits cleared
+
+   */
 
 /*
 * Rotate num to the left by d bits
