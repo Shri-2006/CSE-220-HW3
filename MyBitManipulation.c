@@ -22,8 +22,17 @@ int ToggleBit(int num, int pos) {
 * Return -1 if num == 0
 */
 int GetMSB(int num) {
-   //
+   for(int pos=31; pos>=0;pos--){
+      //must be unsigned to prevent -0 error
+      unsigned int bit_check=1;
+      bit_check=(bit_check<<pos);
 
+      //check if bit is 1
+      if((num&bit_check)!=0){
+         return pos;
+      }
+   }
+   //if no 1, return -1
    return -1;
 }
 

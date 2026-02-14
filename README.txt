@@ -13,4 +13,6 @@ HW3/
 
 1- write your name and SBU ID in each of the file.
 
-In ToggleBit(num, pos) I put the edge case of less than 0, or greater than 31 since we are assuming 32 bits for integer
+Part 1:
+Q1: In ToggleBit(num, pos) I put the edge case of less than 0, or greater than 31 since we are assuming 32 bits for integer
+
