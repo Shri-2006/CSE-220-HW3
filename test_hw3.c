@@ -11,6 +11,14 @@
 Test(ToggleBit, examples) {
    cr_assert_eq(ToggleBit(9, 0), 8);
    cr_assert_eq(ToggleBit(9, 3), 1);
+   //tests by Shriyans Singh
+   cr_assert_eq(ToggleBit(0,0),1);
+   cr_assert_eq(ToggleBit(1,0),0);
+   cr_assert_eq(ToggleBit(0,2),4);
+   cr_assert_eq(ToggleBit(-1,3),-9);
+   cr_assert_eq(ToggleBit(2147483647,31),-1);
+   cr_assert_eq(ToggleBit(20,3),28);
+   cr_assert_eq(ToggleBit(20,5),52)
 }
 
 
