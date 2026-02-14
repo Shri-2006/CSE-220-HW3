@@ -20,4 +20,4 @@ Q2: made bit_check an unsigned integer because i got worried about -0 error (I t
 
 Q3. Wrote the constraints requested of start<0, end>31, start>end return num. Additionally made one an unsigned integer to prevent -0 error that happened on vm.
 
-Q4. Constraint to prevent d from being greater than 31 (number could be put, but it would be less than 32). Created a checker to see if most significant bit is one.
+Q4. Constraint to prevent -d. Constraint to reduce d to under 32.                                                                                                                                                                                                                                             //OLD:Constraint to prevent -d. wasn't mentioned in assignment so I assume it doesn't exist, but I made it just in case. Constraint to prevent d from being greater than 31 (number could be put, but it would be less than 32). Created a checker to see if most significant bit is one. Did a unsigned int temp= num because of the -0 error thing.

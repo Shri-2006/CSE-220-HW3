@@ -61,27 +61,22 @@ int ClearBitRange(int num, int start, int end) {
 /*
 * Rotate num to the left by d bits
 */
-int RotateLeft(int num, int d) {
+//based on piazza
+uint32_t RotateLeft(uint32_t num, int d) {
+   //constraint to prevent negative d 
+   if (d<0){
+      return num;
+   }
    //Constraint to prevent overflow rotation
    while(d>31){
       d=d-32;
    }
 
-   //create checker to see if most significant bit is 1
-   unsigned int bit_check=1;
-   bit_check=(bit_check<<31);
+   //create shifted left by d position. Stored positions lost in num_right.
+   uint32_t num_left=num<<d;
+   uint32_t num_right=num>>(32-d);
 
-
-   for(int i=d; i>0;i--){
-      int temp = 0;
-      if ((num&bit_check)!=0){
-         temp =1;
-      }
-      num=num<<1;
-      num=num+temp;
-
-   }
-
+   num = num_left||num_right;
 
    return num;
 }
