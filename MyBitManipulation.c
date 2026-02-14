@@ -40,13 +40,19 @@ int GetMSB(int num) {
 * Clear bits from start to end (inclusive)
 */
 int ClearBitRange(int num, int start, int end) {
-   /* TODO: implement */
-   int zero =0;
+   //set constraints
    if(start < 0 || end >31 || start>end){
       return num;
    }
+
+   //while start<=end run clearer
    for (start; start<=end; start++){
-      
+      //unsigned to prevent -0 error here
+      unsigned int one=1;
+      //all bits but bit to be cleared =1
+      unsigned int bit_clearer=~(one<<start);
+     //clear bits
+      num=num&bit_clearer;
 
    }
    return num;
