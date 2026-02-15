@@ -17,6 +17,9 @@ float construct_float_sf(char sign_bit, char exponent, unsigned int fraction) {
    unsigned int exponent_int = exponent;
    exponent_int=exponent_int<<23;
 
+   //keep only first 23 bits
+   fraction = fraction&0b11111111111111111111111;
+
    //combination of all three parts
    f= sign_bit_int | exponent_int| fraction;
 
