@@ -112,11 +112,8 @@ uint32_t RotateLeft(uint32_t num, int d) {
    while(d>31){
       d=d-32;
    }
-
-
    //create shifted left by d position. 
    uint32_t num_left=num<<d;
-
    //Stored positions lost in num_right.
    uint32_t num_right=num>>(32-d);
 
@@ -125,6 +122,17 @@ uint32_t RotateLeft(uint32_t num, int d) {
 
    return num;
 }
+
+    //RotateLeft Tests by Shriyans Singh
+   /*
+   cr_assert_eq(RotateLeft(23,-4),23);//deals with negative d check
+   cr_assert_eq(RotateLeft(1,31),-2147483648); //puts first bit into MSB, making it negative. 
+   cr_assert_eq(RotateLeft(0,100),0);//checks if any bits are actually changed instead of simply being moved.
+   cr_assert_eq(RotateLeft(-1,31),-1);//another check to see if bits are affected. 
+   cr_assert_eq(RotateLeft(23,32),23); //should result in same thing since moved by 0 bits
+
+   */
+
 
 /*
 * Swap odd and even bits

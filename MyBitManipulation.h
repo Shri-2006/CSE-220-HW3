@@ -5,7 +5,7 @@
 int ToggleBit(int num, int pos);
 int GetMSB(int num);
 int ClearBitRange(int num, int start, int end);
-int RotateLeft(int num, int d);
+uint32_t RotateLeft(uint32_t num, int d); //changed based on updated MyBitManipulation.h
 int SwapOddEvenBits(int num);
 
 #endif

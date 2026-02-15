@@ -59,7 +59,18 @@ Test(ClearBitRange, examples) {
 Test(RotateLeft, examples) {
    cr_assert_eq(RotateLeft(5, 1), 10);
    cr_assert_eq(RotateLeft(5, 2), 20);
+
+    //Tests by Shriyans Singh
+   /*
+   cr_assert_eq(RotateLeft(23,-4),23);//deals with negative d check
+   cr_assert_eq(RotateLeft(1,31),-2147483648); //puts first bit into MSB, making it negative. 
+   cr_assert_eq(RotateLeft(0,100),0);//checks if any bits are actually changed instead of simply being moved.
+   cr_assert_eq(RotateLeft(-1,31),-1);//another check to see if bits are affected. 
+   cr_assert_eq(RotateLeft(23,32),23); //should result in same thing since moved by 0 bits
+
+   */
 }
+
 
 Test(SwapOddEvenBits, examples) {
    cr_assert_eq(SwapOddEvenBits(23), 43);
