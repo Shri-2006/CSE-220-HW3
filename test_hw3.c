@@ -74,6 +74,15 @@ Test(RotateLeft, examples) {
 
 Test(SwapOddEvenBits, examples) {
    cr_assert_eq(SwapOddEvenBits(23), 43);
+   //Test by Shriyans Singh
+   /*
+   cr_assert_eq(SwapOddEvenBits(0),0); //should remain 0 since all is 0 bit
+   cr_assert_eq(SwapOddEvenBits(1),2); //should become 2 since 0001 would change 0010.
+   cr_assert_eq(SwapOddEvenBits(2),1); //should become 1 since 0010 becomes 0001. Basically checking the reverse 
+   cr_assert_eq(SwapOddEvenBits(7),11); // 0111 becomes 1011 since first two bits swap with each other, and the MSB with a 1 swaps with MSB.
+   cr_assert_eq(SwapOddEvenBits(-1),-1); //remains the same since all bits are 1. Checks if negatives work.
+   
+   */
 }
 
 /* =========================
