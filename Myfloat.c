@@ -20,7 +20,7 @@ float construct_float_sf(char sign_bit, char exponent, unsigned int fraction) {
 
    //combination of all three parts
    f= sign_bit_int | exponent_int| fraction;
-eep only first 23 bits
+
 
    //Debugger printer to figure out error (figured out exponent was problem from here)
    //printf("sign = %X, exponent = %X, fraction = %X\n", sign_bit_int,exponent_int,fraction);
