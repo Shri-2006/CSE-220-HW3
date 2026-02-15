@@ -12,11 +12,11 @@ float construct_float_sf(char sign_bit, char exponent, unsigned int fraction) {
    //Exponenet shifter and conversion
    uint32_t exponent_int = exponent;
    //Preventing unnecessary bits from interfering. Only care about 8 bits.
-   exponent_int=exponent&0b11111111;
+   exponent_int=exponent&0xFF;        //&0b11111111;
    exponent_int=exponent_int<<23;
 
    //Remove all unnecesssary bits in fraction
-   fraction = fraction&0b11111111111111111111111;
+   fraction = fraction&0x7FFFFF;      //&0b11111111111111111111111;
 
    //combination of all three parts
    f= sign_bit_int | exponent_int| fraction;
