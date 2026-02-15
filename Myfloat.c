@@ -9,8 +9,15 @@ float construct_float_sf(char sign_bit, char exponent, unsigned int fraction) {
     * Start coding here
     * Use bitwise operations to construct the IEEE 754 float
     */
-   uint32_t sign_bit_int = sign_bit<<31;
-   uint32_t exponent_int = exponent<<23;
+   //Unsigned to do proper shifting.
+   uint32_t sign_bit_int = sign_bit;
+   sign_bit_int=sign_bit_int<<31;
+
+   //unsigned to do proper shifting
+   uint32_t exponent_int = exponent;
+   exponent_int=exponent_int<<23;
+
+   //combination of all three parts
    f= sign_bit_int | exponent_int| fraction;
 
    
