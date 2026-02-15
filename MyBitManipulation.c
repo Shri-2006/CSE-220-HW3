@@ -40,7 +40,7 @@ int ToggleBit(int num, int pos) {
 int GetMSB(int num) {
    for(int pos=31; pos>=0;pos--){
       //must be unsigned to prevent -0 error
-      unsigned int bit_check=1;
+      uint32_t bit_check=1;
       bit_check=(bit_check<<pos);
 
       //check if bit is 1
@@ -75,9 +75,9 @@ int ClearBitRange(int num, int start, int end) {
    //while start<=end run clearer
    for (int i=start; i<=end; i++){
       //unsigned to prevent -0 error here
-      unsigned int one=1;
+      uint32_t one=1;
       //all bits but bit to be cleared set to 1
-      unsigned int bit_clearer=~(one<<i);
+      uint32_t bit_clearer=~(one<<i);
 
      //clear bits using & operator
       num=num&bit_clearer;
