@@ -79,3 +79,7 @@ Togglebit test cases I wrote:
    cr_assert_eq(SwapOddEvenBits(-1),-1); //remains the same since all bits are 1. Checks if negatives work.
    
    */
+
+
+   Part 2:Myfloat.case
+   
