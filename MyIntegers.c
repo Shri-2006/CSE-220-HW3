@@ -24,7 +24,7 @@ void repr_convert(char source_repr, char target_repr, unsigned int repr) {
         //if target is also 2's return repr
         if(target_repr == '2'){
             printf("%x\n",repr);
-            return repr;
+            
         }
     }
 
