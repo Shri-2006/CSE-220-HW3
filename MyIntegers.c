@@ -16,9 +16,9 @@ void repr_convert(char source_repr, char target_repr, unsigned int repr) {
     */
     
     //If not 2 or S in both repr, print "error\n"
-    if((source_repr!='2' || source_repr!='S')|| (target_repr!='2' || target_repr!='S')){
+    if((source_repr!='2' &&source_repr!='S')|| (target_repr!='2'&& target_repr!='S')){
         printf("error\n");
-        break;
+        
     }
 
 
