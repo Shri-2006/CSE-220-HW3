@@ -3,6 +3,7 @@
 #include "MyBitManipulation.h"
 #include "Myfloat.h"
 #include "MyIntegers.h"
+#include <stdint.h>
 
 int main(void) {
 

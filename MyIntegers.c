@@ -2,6 +2,7 @@
 #include "MyIntegers.h"
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdint.h>
 
 void repr_convert(char source_repr, char target_repr, unsigned int repr) {
 
@@ -12,5 +13,6 @@ void repr_convert(char source_repr, char target_repr, unsigned int repr) {
     * 3. Convert to target representation
     * 4. Print the result or error message
     */
+
 
 }

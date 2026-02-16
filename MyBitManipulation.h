@@ -1,6 +1,7 @@
 //#Shriyans Singh 114807762
 #ifndef MY_BIT_MANIPULATION_H
 #define MY_BIT_MANIPULATION_H
+#include <stdint.h>
 
 int ToggleBit(int num, int pos);
 int GetMSB(int num);
