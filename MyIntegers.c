@@ -27,9 +27,28 @@ void repr_convert(char source_repr, char target_repr, unsigned int repr) {
         }
         //if target is 'S'
         else{
-            
+            uint32_t bit_check=1;
+            bit_check=(bit_check<<31);
+            //check if number is negative
+            if((num&bit_check)!=0){
+                
+
+
+            }                             
+
         }
 
+    }
+    //source is signed
+    else {
+        //if target is same as source return repr
+        if(target_repr == 'S'){
+            printf("%x\n ",repr);
+        }
+        //if target is '2' convert
+        else{
+            
+        }
     }
 
 
