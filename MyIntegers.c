@@ -17,25 +17,38 @@ void repr_convert(char source_repr, char target_repr, unsigned int repr) {
     
     //If not 2 or S in both repr, print "error\n"
     if((source_repr!='2' &&source_repr!='S')|| (target_repr!='2'&& target_repr!='S')){
-        printf("error\n");   
+        printf("error\n");
+        //stop execution if bad input
+        return;   
     }
     //if source is 2's complement
     if (source_repr=='2'){
+        int res = (int) repr;
         //if target is also 2's return repr
         if(target_repr == '2'){
-            printf("%x\n",repr);
+            printf("0x%x\n",repr);
+            return;
         }
         //if target is 'S'
         else{
-            uint32_t bit_check=1;
-            bit_check=(bit_check<<31);
-            //check if number is negative
-            if((num&bit_check)!=0){
+            int repr_int = (int) repr;
+            if (repr_int==0x80000000){
+                printf("Undefined\n");
+                return;
+            }else{
                 
-
-
-            }                             
-
+                if(repr_int<0){
+                    uint32_t res = -repr_int;
+                    res=res|0x80000000;
+                }
+                else{
+                    uint32_t res= repr;
+                }
+                printf("0x%x\n",res);
+                return;
+            }
+            
+            
         }
 
     }
@@ -43,11 +56,11 @@ void repr_convert(char source_repr, char target_repr, unsigned int repr) {
     else {
         //if target is same as source return repr
         if(target_repr == 'S'){
-            printf("%x\n ",repr);
+            printf("0x%x\n ",repr);
         }
         //if target is '2' convert
         else{
-            
+
         }
     }
 
