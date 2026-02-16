@@ -23,7 +23,7 @@ float construct_float_sf(char sign_bit, char exponent, unsigned int fraction) {
 
 
    //Debugger printer to figure out error (figured out exponent was problem from here)
-   //printf("sign = %X, exponent = %X, fraction = %X\n", sign_bit_int,exponent_int,fraction);
+   //printf("sign = %x, exponent = %x, fraction = %X\n\n\n", sign_bit_int,exponent_int,fraction);
    
 
    return *(float *)&f;
