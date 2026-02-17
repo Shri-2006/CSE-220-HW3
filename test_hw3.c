@@ -169,5 +169,16 @@ Test(ReprConvert, basic_run) {
    repr_convert('2', '2', 0x59f2ca50);
    repr_convert('S', '2', 0x80000000);
 }
+//Shriyans Singh (tests done visually)
+/*
+
+   repr_convert('2', 'S', 0x00000005);//return 00000005
+   repr_convert('2', 'S', 0xffffffff);//return 80000001
+   repr_convert('2', '2', 0xffffffff);//return ffffffff
+   repr_convert('4','2',0xffffffff);//return error
+   repr_convert('2','S', 0x00000000);//return 00000000
+   repr_convert('S','2', 0x00000000);//return 00000000
+
+*/
 
 
