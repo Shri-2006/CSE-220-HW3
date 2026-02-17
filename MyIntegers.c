@@ -26,41 +26,65 @@ void repr_convert(char source_repr, char target_repr, unsigned int repr) {
         int res = (int) repr;
         //if target is also 2's return repr
         if(target_repr == '2'){
-            printf("0x%x\n",repr);
+            printf("%8x\n",repr);
             return;
         }
         //if target is 'S'
         else{
             int repr_int = (int) repr;
-            if (repr_int==0x80000000){
-                printf("Undefined\n");
+            //if unable to convert to signed, undefined
+            if (repr==0x80000000){
+                printf("undefined\n");
                 return;
             }else{
-                
+                uint32_t res = 0;
+                //if negative use absolute value for it.
                 if(repr_int<0){
-                    uint32_t res = -repr_int;
+                    res = -repr_int;
                     res=res|0x80000000;
                 }
                 else{
-                    uint32_t res= repr;
+                    //if positive its repr;
+                    res= repr;
                 }
-                printf("0x%x\n",res);
+                printf("%8x\n",res);
                 return;
             }
-            
-            
         }
-
     }
     //source is signed
     else {
         //if target is same as source return repr
         if(target_repr == 'S'){
-            printf("0x%x\n ",repr);
+            printf("%8x\n ",repr);
+            return;
         }
         //if target is '2' convert
         else{
-
+            //find sign bit
+            uint32_t sign_bit = repr>>31;
+            //store repr as temp and clean it.
+            uint32_t temp = repr;
+            temp= temp& 0x7FFFFFFF; 
+            //if 0, print 0
+            if(temp==0){
+                printf("%8x\n",0);
+                return;
+            }
+            //convert to signed value
+            else{
+                int signed_res=0;
+                if(sign_bit==0){
+                    signed_res=(int)temp;
+                    uint32_t res = (uint32_t)(signed_res);
+                    printf("%8x\n",res);
+                }
+                else{
+                    signed_res=-(int)(temp);
+                    uint32_t res = (uint32_t)(signed_res);
+                    printf("%8x\n",res);
+                }
+            }
         }
     }
 
