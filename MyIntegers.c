@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include <stdint.h>
+#include <stdint.h>//Professor Malik said that this library is ok to add
 
 void repr_convert(char source_repr, char target_repr, unsigned int repr) {
 
