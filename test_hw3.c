@@ -19,7 +19,7 @@ Test(ToggleBit, examples) {
    cr_assert_eq(ToggleBit(-1,3),-9);
    cr_assert_eq(ToggleBit(2147483647,31),-1);
    cr_assert_eq(ToggleBit(20,3),28);
-   cr_assert_eq(ToggleBit(20,5),52)
+   cr_assert_eq(ToggleBit(20,5),52);
    */
 }
 
@@ -49,11 +49,11 @@ Test(ClearBitRange, examples) {
    cr_assert_eq(ClearBitRange(2,10,41),2); //checks end>31 constraint, return num
    cr_assert_eq(ClearBitRange(9,1,4),1); //clears all bit but first 
    cr_assert_eq(ClearBitRange(63,1,5),1); //clears all bit but first
-   cr_assert_eq(ClearBitRange(100000,0,0),0); //checks if only one bit changes
+   cr_assert_eq(ClearBitRange(100000,0,0),100000); //checks if only one bit changes
    cr_assert_eq(ClearBitRange(63,0,0),62);// checks if only one bit changes
    cr_assert_eq(ClearBitRange(23,0,10),0); //checks if all bits cleared
-
-   */
+*/
+   
 }
 
 Test(RotateLeft, examples) {
@@ -67,8 +67,8 @@ Test(RotateLeft, examples) {
    cr_assert_eq(RotateLeft(0,100),0);//checks if any bits are actually changed instead of simply being moved.
    cr_assert_eq(RotateLeft(-1,31),-1);//another check to see if bits are affected. 
    cr_assert_eq(RotateLeft(23,32),23); //should result in same thing since moved by 0 bits
-
    */
+   
 }
 
 
@@ -81,8 +81,8 @@ Test(SwapOddEvenBits, examples) {
    cr_assert_eq(SwapOddEvenBits(2),1); //should become 1 since 0010 becomes 0001. Basically checking the reverse 
    cr_assert_eq(SwapOddEvenBits(7),11); // 0111 becomes 1011 since first two bits swap with each other, and the MSB with a 1 swaps with MSB.
    cr_assert_eq(SwapOddEvenBits(-1),-1); //remains the same since all bits are 1. Checks if negatives work.
-   
    */
+   
 }
 
 /* =========================
@@ -168,17 +168,20 @@ Test(ConstructFloat, negative_examples) {
 Test(ReprConvert, basic_run) {
    repr_convert('2', '2', 0x59f2ca50);
    repr_convert('S', '2', 0x80000000);
-}
-//Shriyans Singh (tests done visually)
-/*
 
+   //Shriyans Singh (tests done visually)
+
+/*
    repr_convert('2', 'S', 0x00000005);//return 00000005
    repr_convert('2', 'S', 0xffffffff);//return 80000001
    repr_convert('2', '2', 0xffffffff);//return ffffffff
    repr_convert('4','2',0xffffffff);//return error
    repr_convert('2','S', 0x00000000);//return 00000000
    repr_convert('S','2', 0x00000000);//return 00000000
-
 */
+   
+}
+
+
 
 

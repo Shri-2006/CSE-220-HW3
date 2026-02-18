@@ -34,7 +34,7 @@ Togglebit test cases I wrote:
    cr_assert_eq(ToggleBit(-1,3),-9); - Flip the 3 bit, and it is already -1, so MSB is still 1, and the third bit is flipped, resulting in 9.
    cr_assert_eq(ToggleBit(2147483647,31),-1); - Flip the MSB, turning into negative. Results in -1.
    cr_assert_eq(ToggleBit(20,3),28); - Flip third bit from 0 to 1, resulting in 20+8=28
-   cr_assert_eq(ToggleBit(20,5),52) - Flip the 5th bit, adding 32 to 20 resulting in 52. 
+   cr_assert_eq(ToggleBit(20,5),52); - Flip the 5th bit, adding 32 to 20 resulting in 52. 
 
   //GetMSB Tests by Shriyans Singh
    /*
@@ -53,7 +53,7 @@ Togglebit test cases I wrote:
    cr_assert_eq(ClearBitRange(2,10,41),2); //checks end>31 constraint, return num
    cr_assert_eq(ClearBitRange(9,1,4),1); //clears all bit but first 
    cr_assert_eq(ClearBitRange(63,1,5),1); //clears all bit but first
-   cr_assert_eq(ClearBitRange(100000,0,0),0); //checks if only one bit changes
+   cr_assert_eq(ClearBitRange(100000,0,0),100000); //checks if only one bit changes
    cr_assert_eq(ClearBitRange(63,0,0),62);// checks if only one bit changes
    cr_assert_eq(ClearBitRange(23,0,10),0); //checks if all bits cleared
 
