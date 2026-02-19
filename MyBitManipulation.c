@@ -112,6 +112,10 @@ uint32_t RotateLeft(uint32_t num, int d) {
    while(d>31){
       d=d-32;
    }
+   //Prevents undefined bug during criterion test
+   if(d==0){
+      return num;
+   }
    //create shifted left by d position. 
    uint32_t num_left=num<<d;
    //Stored positions lost in num_right.

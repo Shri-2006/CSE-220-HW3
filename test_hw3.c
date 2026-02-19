@@ -13,6 +13,8 @@ Test(ToggleBit, examples) {
    cr_assert_eq(ToggleBit(9, 3), 1);
    //tests by Shriyans Singh
    /*
+   cr_assert_eq(ToggleBit(2,-1),2);
+   cr_assert_eq(ToggleBit(2,43),2);
    cr_assert_eq(ToggleBit(0,0),1);
    cr_assert_eq(ToggleBit(1,0),0);
    cr_assert_eq(ToggleBit(0,2),4);
@@ -52,7 +54,7 @@ Test(ClearBitRange, examples) {
    cr_assert_eq(ClearBitRange(100000,0,0),100000); //checks if only one bit changes
    cr_assert_eq(ClearBitRange(63,0,0),62);// checks if only one bit changes
    cr_assert_eq(ClearBitRange(23,0,10),0); //checks if all bits cleared
-*/
+   */
    
 }
 
@@ -63,7 +65,7 @@ Test(RotateLeft, examples) {
     //Tests by Shriyans Singh
    /*
    cr_assert_eq(RotateLeft(23,-4),23);//deals with negative d check
-   cr_assert_eq(RotateLeft(1,31),-2147483648); //puts first bit into MSB, making it negative. 
+   cr_assert_eq(RotateLeft(1,31),0x80000000); //puts first bit into MSB, making it negative. -2147483648 doesn't work cause its not signed (asked TA for help with this)
    cr_assert_eq(RotateLeft(0,100),0);//checks if any bits are actually changed instead of simply being moved.
    cr_assert_eq(RotateLeft(-1,31),-1);//another check to see if bits are affected. 
    cr_assert_eq(RotateLeft(23,32),23); //should result in same thing since moved by 0 bits
@@ -95,22 +97,25 @@ Test(ConstructFloat, positive_examples) {
 
    //Tests by Shriyans Singh
    /*
-    f = construct_float_sf(0x00, 0x00, 0x0000000); //test if remains 0
+   f = construct_float_sf(0x00, 0x00, 0x0000000); //test if remains 0
    cr_assert_float_eq(f, 0.0, 0.00001);
 
-    f = construct_float_sf(0x00, 0x7F, 0x000000);//1 means exponent is properly shifted.
+   f = construct_float_sf(0x00, 0x7F, 0x000000);//1 means exponent is properly shifted.
    cr_assert_float_eq(f, 1, 0.00001);
 
-    f = construct_float_sf(0x00, 0x80, 0x200000);//if 2, then 2 verifcations of positive exponent shift works
+   f = construct_float_sf(0x00, 0x80, 0x000000);//if 2, then 2 verifcations of positive exponent shift works
    cr_assert_float_eq(f, 2, 0.00001);
 
-    f = construct_float_sf(0x00, 0x7F, 0x400000); //1.5 means decimals work
+   f = construct_float_sf(0x00, 0x80, 0x200000);//if 2.5, then more verifcations of positive exponent shift works
+   cr_assert_float_eq(f, 2.5, 0.00001);
+
+   f = construct_float_sf(0x00, 0x7F, 0x400000); //1.5 means decimals work
    cr_assert_float_eq(f, 1.5, 0.00001);
 
-    f = construct_float_sf(0x00, 0x91, 0x700000); //Checks large numbers (must be larger than 255439)
+   f = construct_float_sf(0x00, 0x91, 0x700000); //Checks large numbers (must be larger than 255439)
    cr_assert_float_eq(f, 491520, 0.00001);
-   */
    
+   */
 
 }
 
@@ -119,19 +124,22 @@ Test(ConstructFloat, negative_examples) {
    cr_assert_float_eq(f, -1.25, 0.00001);
    //Tests by Shriyans Singh
    /*
-    f = construct_float_sf(0x01, 0x00, 0x0000000); //tests if negative 0 works (only sign bit has a one)
+   f = construct_float_sf(0x01, 0x00, 0x0000000); //tests if negative 0 works (only sign bit has a one)
    cr_assert_float_eq(f, -0, 0.00001);
 
-    f = construct_float_sf(0x01, 0x7F, 0x000000);//-1 means exponent is being properl shifted.
+   f = construct_float_sf(0x01, 0x7F, 0x000000);//-1 means exponent is being properl shifted.
    cr_assert_float_eq(f, -1, 0.00001);
 
-    f = construct_float_sf(0x01, 0x80, 0x200000); //if -2 then 2 verifcation of negative exponent shift
+   f = construct_float_sf(0x01, 0x80, 0x000000); //if -2 then 2 verifcation of negative exponent shift
    cr_assert_float_eq(f, -2, 0.00001);
 
-    f = construct_float_sf(0x01, 0x7F, 0x400000); //-1.5 negative decimals also work
+     f = construct_float_sf(0x01, 0x80, 0x200000);//if -2.5, then 2 verifcations of positive exponent shift works
+   cr_assert_float_eq(f, -2.5, 0.00001);
+
+   f = construct_float_sf(0x01, 0x7F, 0x400000); //-1.5 negative decimals also work
    cr_assert_float_eq(f, -1.5, 0.00001);
 
-    f = construct_float_sf(0x01, 0x91, 0x700000); //checks large negative numbers (less than -255439 )
+   f = construct_float_sf(0x01, 0x91, 0x700000); //checks large negative numbers (less than -255439 )
    cr_assert_float_eq(f, -491520, 0.00001);
    */
 }
