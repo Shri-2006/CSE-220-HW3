@@ -5,6 +5,11 @@
 float construct_float_sf(char sign_bit, char exponent, unsigned int fraction) {
    unsigned int f = 0;
 
+   //if sign bit is invalid, return 0.00
+   if ((sign_bit!=0x00)&&(sign_bit!=0x01)){
+      printf("Invalid Sign Bit: %c",sign_bit);
+      return 0.00;
+   }
    //Sign bit conversion and shifter.
    uint32_t sign_bit_int = (uint32_t)sign_bit;
    sign_bit_int=sign_bit_int&1;
@@ -76,4 +81,5 @@ float construct_float_sf(char sign_bit, char exponent, unsigned int fraction) {
    f = construct_float_sf(0x01, 0x91, 0x700000); //checks large negative numbers (less than -255439 )
    cr_assert_float_eq(f, -491520, 0.00001);
    */
+    //I wasn't sure how to write the edge case for if sign bit is invalid in criterion so I left it out.
 

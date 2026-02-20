@@ -114,8 +114,8 @@ Test(ConstructFloat, positive_examples) {
 
    f = construct_float_sf(0x00, 0x91, 0x700000); //Checks large numbers (must be larger than 255439)
    cr_assert_float_eq(f, 491520, 0.00001);
-   
    */
+   
 
 }
 
@@ -142,6 +142,7 @@ Test(ConstructFloat, negative_examples) {
    f = construct_float_sf(0x01, 0x91, 0x700000); //checks large negative numbers (less than -255439 )
    cr_assert_float_eq(f, -491520, 0.00001);
    */
+   //I wasn't sure how to write the edge case for if sign bit is invalid in criterion so I left it out.
 }
 
 
